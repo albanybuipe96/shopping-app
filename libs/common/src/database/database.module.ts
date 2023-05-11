@@ -1,13 +1,13 @@
 import { Module } from "@nestjs/common"
 import { ConfigService } from "@nestjs/config"
 import { MongooseModule } from "@nestjs/mongoose"
-import { URIs } from "../constants/uris.constant"
+import { Constants } from "../constants/constants"
 
 @Module({
     imports: [
         MongooseModule.forRootAsync({
             useFactory: (configService: ConfigService) => ({
-                uri: configService.get<string>(URIs.MONGODB_URI),
+                uri: configService.get<string>(Constants.MONGODB_URI),
             }),
             inject: [ConfigService]
         })
