@@ -2,6 +2,7 @@
 export class Constants {
     static readonly MONGODB_URI: string = 'MONGODB_URI'
     static readonly RABBIT_MQ_URI: string = 'RABBIT_MQ_URI'
+    static readonly RABBIT_MQ_PREFIX: string = 'RABBIT_MQ_'
 
     // orders
     static readonly ORDERS_PORT: string = 'PORT'
