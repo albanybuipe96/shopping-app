@@ -3,6 +3,7 @@ import { BillingController } from './billing.controller';
 import { BillingService } from './billing.service';
 import { ConfigModule } from '@nestjs/config';
 import * as Joi from 'joi';
+import { RmqModule } from '@app/common';
 
 @Module({
   imports: [
@@ -13,7 +14,7 @@ import * as Joi from 'joi';
         RABBIT_MQ_BILLING_QUEUE: Joi.string().required()
       })
     }),
-    // TODO: RmqModule
+    RmqModule
   ],
   controllers: [BillingController],
   providers: [BillingService],
