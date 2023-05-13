@@ -25,13 +25,13 @@ export class RmqModule {
                             options: {
                                 urls: [configService.get<string>(Constants.RABBIT_MQ_URI)],
                                 queue: configService.get<string>(`${Constants.RABBIT_MQ_PREFIX}${name}_QUEUE`)
-                            }
+                            },
                         }),
-                    }
-                ])
-            ]
+                        inject: [ConfigService],
+                    },
+                ]),
+            ],
+            exports: [ClientsModule]
         }
     }
 }
-
-// TODO: 47:24 continue from here
